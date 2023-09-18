@@ -1,0 +1,15 @@
+C:\Users\jonas\Desktop\JACS\Futures\Futures\bin\Debug\net7.0\Futures.exe
+C:\Users\jonas\Desktop\JACS\Futures\Futures\bin\Debug\net7.0\Futures.deps.json
+C:\Users\jonas\Desktop\JACS\Futures\Futures\bin\Debug\net7.0\Futures.runtimeconfig.json
+C:\Users\jonas\Desktop\JACS\Futures\Futures\bin\Debug\net7.0\Futures.dll
+C:\Users\jonas\Desktop\JACS\Futures\Futures\bin\Debug\net7.0\Futures.pdb
+C:\Users\jonas\Desktop\JACS\Futures\Futures\obj\Debug\net7.0\Futures.csproj.AssemblyReference.cache
+C:\Users\jonas\Desktop\JACS\Futures\Futures\obj\Debug\net7.0\Futures.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonas\Desktop\JACS\Futures\Futures\obj\Debug\net7.0\Futures.AssemblyInfoInputs.cache
+C:\Users\jonas\Desktop\JACS\Futures\Futures\obj\Debug\net7.0\Futures.AssemblyInfo.cs
+C:\Users\jonas\Desktop\JACS\Futures\Futures\obj\Debug\net7.0\Futures.csproj.CoreCompileInputs.cache
+C:\Users\jonas\Desktop\JACS\Futures\Futures\obj\Debug\net7.0\Futures.dll
+C:\Users\jonas\Desktop\JACS\Futures\Futures\obj\Debug\net7.0\refint\Futures.dll
+C:\Users\jonas\Desktop\JACS\Futures\Futures\obj\Debug\net7.0\Futures.pdb
+C:\Users\jonas\Desktop\JACS\Futures\Futures\obj\Debug\net7.0\Futures.genruntimeconfig.cache
+C:\Users\jonas\Desktop\JACS\Futures\Futures\obj\Debug\net7.0\ref\Futures.dll
