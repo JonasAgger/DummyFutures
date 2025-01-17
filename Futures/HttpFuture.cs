@@ -13,12 +13,13 @@ public class HttpFuture
 
     public IEnumerable MakeHttpCallAndWriteResults()
     {
+        Utils.Log("MAKING CALL");
         var future = client.GetStringAsync("https://httpbin.org/delay/1").ToFuture();
 
         yield return future;
         
-        Console.WriteLine("RESPONSE: --------");
-        Console.WriteLine(future.Value);
+        Utils.Log("RESPONSE: --------");
+        Utils.Log(future.Value);
 
         yield return true;
     }

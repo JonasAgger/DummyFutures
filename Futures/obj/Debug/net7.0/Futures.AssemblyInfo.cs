@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Futures")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4cf11a53dd6f382f6d1c5d85ac072b95e82915fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("Futures")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Futures")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

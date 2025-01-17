@@ -9,13 +9,15 @@ public class TaskRunner
 
     // private Dictionary<>
 
-    public void Add(IEnumerable task) => tasks.Enqueue(new Future(task.GetEnumerator()));
+    public void Add(Future task) => tasks.Enqueue(task);
+    public void Add(TaskFuture task) => tasks.Enqueue(new Future(task));
+    public void Add(IEnumerable task) => tasks.Enqueue(new Future(task));
 
     public void Execute()
     {
         while (TryGetNext(out var next))
         {
-            Console.WriteLine("Running step!");
+            // Console.WriteLine("Running step!");
             var moved = next.MoveNext();
             if (moved)
             {
