@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Futures
-build_property.ProjectDir = C:\Users\jonas\Desktop\JACS\Futures\Futures\
+build_property.ProjectDir = C:\Wat\DummyFutures\Futures\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

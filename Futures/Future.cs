@@ -4,16 +4,27 @@ namespace Futures;
 
 public class Future : IEnumerator
 {
+    public static int CURRENT_ID;
+    private static int COUNTER;
+    private int id;
     private IEnumerator current;
     private IEnumerator? inner;
 
-    public Future(IEnumerator current)
+    public Future(IEnumerable current)
     {
+        this.id = Interlocked.Increment(ref COUNTER);
+        this.current = current.GetEnumerator();
+    }
+    
+    public Future(TaskFuture current)
+    {
+        this.id = Interlocked.Increment(ref COUNTER);
         this.current = current;
     }
 
     public bool MoveNext()
     {
+        CURRENT_ID = id;
         if (inner != null && inner.MoveNext())
         {
             return true;
@@ -24,7 +35,7 @@ public class Future : IEnumerator
         {
             if (current.Current is IEnumerable next)
             {
-                inner = new Future(next.GetEnumerator());
+                inner = new Future(next);
             }
             else if (current.Current is Task task)
             {
@@ -43,7 +54,7 @@ public class Future : IEnumerator
 
 
     public void Reset() { }
-    object IEnumerator.Current => current.Current;
+    object IEnumerator.Current => current.Current!;
     public void Dispose() {}
 }
 
