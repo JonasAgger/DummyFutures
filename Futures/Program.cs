@@ -1,26 +1,22 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Collections;
 using Futures;
-
-var tc1 = new TestClass("tc1");
-var tc2 = new TestClass("tc2");
-
-var testHttp = new HttpFuture();
 
 var runner = new TaskRunner();
 
-// runner.Add(tc1.DoStuff());
-
-runner.Add(tc2.DoStuff());
-runner.Add(testHttp.MakeHttpCallAndWriteResults());
-runner.Add(SayHello().ToFuture());
+runner.Add(DoSomeStuffAndWait("NR 1"));
+runner.Add(DoSomeStuffAndWait("NR 2"));
 
 runner.Execute();
 
+IEnumerable DoSomeStuffAndWait(string name)
+{
+    Utils.Log($"DoSomeStuffAndWait: {name} part 1");
 
-async Task SayHello() {
-    await Task.Delay(1000);
-    Utils.Log("Hello from async task");
-    await Task.Delay(1000);
-    Utils.Log("async task is done");
+    yield return false;
+
+    Utils.Log($"DoSomeStuffAndWait: {name} part 2");
+
+    yield return true;
 }

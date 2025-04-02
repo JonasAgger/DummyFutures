@@ -17,7 +17,6 @@ public class TaskRunner
     {
         while (TryGetNext(out var next))
         {
-            // Console.WriteLine("Running step!");
             var moved = next.MoveNext();
             if (moved)
             {

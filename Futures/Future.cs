@@ -2,7 +2,7 @@
 
 namespace Futures;
 
-public class Future : IEnumerator
+public partial class Future : IEnumerator
 {
     public static int CURRENT_ID;
     private static int COUNTER;

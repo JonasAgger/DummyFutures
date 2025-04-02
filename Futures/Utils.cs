@@ -2,8 +2,6 @@
 
 public class Utils
 {
-    
-    
     public static void Log(string log)
     {
         var color = (ConsoleColor)((Future.CURRENT_ID + 1) % 15);

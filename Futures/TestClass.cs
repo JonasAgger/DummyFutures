@@ -13,11 +13,11 @@ public class TestClass
     
     public IEnumerable DoStuff()
     {
-        Utils.Log($"Hello world from {name}");
+        Utils.Log($"DoStuff: {name} part 1");
         
         yield return DoOtherStuff();
 
-        Utils.Log($"Hello world from {name} part 2");
+        Utils.Log($"DoStuff: {name} part 2");
 
         yield return true;
     }
@@ -25,12 +25,19 @@ public class TestClass
 
     public IEnumerable DoOtherStuff()
     {
-        Utils.Log($"DoOtherStuff {name}");
-        
-        yield return Task.Delay(2000).ToFuture();
+        Utils.Log($"DoOtherStuff: {name} part 1");
 
-        Utils.Log($"DoOtherStuff {name} part 2");
+        yield return Future.Delay(TimeSpan.FromMilliseconds(500));
+
+        Utils.Log($"DoOtherStuff: {name} part 2");
 
         yield return true;
+    }
+    
+    public IEnumerable SayHello() {
+        yield return Future.Delay(TimeSpan.FromSeconds(1));
+        Utils.Log("Hello from async task");
+        yield return Future.Delay(TimeSpan.FromSeconds(1));
+        Utils.Log("async task is done");
     }
 }
