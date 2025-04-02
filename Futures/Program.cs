@@ -5,18 +5,31 @@ using Futures;
 
 var runner = new TaskRunner();
 
-runner.Add(DoSomeStuffAndWait("NR 1"));
-runner.Add(DoSomeStuffAndWait("NR 2"));
+runner.Add(HttpCall("Dummy"));
 
 runner.Execute();
 
-IEnumerable DoSomeStuffAndWait(string name)
+IEnumerable HttpCall(string name)
 {
-    Utils.Log($"DoSomeStuffAndWait: {name} part 1");
+    Utils.Log($"HttpCall: Before Result {name}");
+    
+    // Calling a Http Client!
+    yield return Call();
 
-    yield return false;
-
-    Utils.Log($"DoSomeStuffAndWait: {name} part 2");
+    Utils.Log($"HttpCall: After Result {name}");
 
     yield return true;
+}
+
+IEnumerable Call()
+{
+    using var client = new HttpClient();
+    
+    // Wrapping the task into an IEnumerable
+    var futureEnumerable = client.GetStringAsync("https://httpbin.org/delay/1").ToFuture();
+    // Yielding the IEnumerable
+    yield return futureEnumerable;
+    
+    // When we return here, the HttpClient got a response
+    Utils.Log($"Call: Http Call Returned: {futureEnumerable.Value}");
 }

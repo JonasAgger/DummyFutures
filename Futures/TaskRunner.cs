@@ -17,7 +17,7 @@ public class TaskRunner
     {
         while (TryGetNext(out var next))
         {
-            var moved = next.MoveNext();
+            var moved = next!.MoveNext();
             if (moved)
             {
                 Thread.Sleep(1);
